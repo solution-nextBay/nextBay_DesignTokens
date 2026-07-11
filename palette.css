@@ -1,0 +1,88 @@
+@theme {
+  --color-nextbay-bg: #181b1c;
+  --color-nextbay-001: #001a23; /* ink black */
+  --color-nextbay-002: #31493c; /* pine teal */
+  --color-nextbay-003: #7a9e7e; /* muted teal */
+  --color-nextbay-004: #b3efb2; /* celadon */
+  --color-nextbay-005: #e8f1f2; /* alice blue */
+  --color-nextbay-006: #e8892a; /* tiger orange */
+  --color-nextbay-input-bg: #000b0eff;
+
+  /* ink black */
+  --color-nextbay-001-50: #e5f9ff;
+  --color-nextbay-001-100: #ccf2ff;
+  --color-nextbay-001-200: #99e6ff;
+  --color-nextbay-001-300: #66d9ff;
+  --color-nextbay-001-400: #33ccff;
+  --color-nextbay-001-500: #00bfff;
+  --color-nextbay-001-600: #0099cc;
+  --color-nextbay-001-700: #007399;
+  --color-nextbay-001-800: #004d66;
+  --color-nextbay-001-900: #002633;
+  --color-nextbay-001-950: #001b24;
+
+  /* pine teal */
+  --color-nextbay-002-50: #f0f5f2;
+  --color-nextbay-002-100: #e0ebe5;
+  --color-nextbay-002-200: #c2d6cb;
+  --color-nextbay-002-300: #a3c2b1;
+  --color-nextbay-002-400: #85ad98;
+  --color-nextbay-002-500: #66997e;
+  --color-nextbay-002-600: #527a65;
+  --color-nextbay-002-700: #3d5c4b;
+  --color-nextbay-002-800: #293d32;
+  --color-nextbay-002-900: #141f19;
+  --color-nextbay-002-950: #0e1512;
+
+  /* muted teal */
+  --color-nextbay-003-50: #f0f4f1;
+  --color-nextbay-003-100: #e1eae2;
+  --color-nextbay-003-200: #c4d4c6;
+  --color-nextbay-003-300: #a6bfa9;
+  --color-nextbay-003-400: #89a98c;
+  --color-nextbay-003-500: #6b9470;
+  --color-nextbay-003-600: #567659;
+  --color-nextbay-003-700: #405943;
+  --color-nextbay-003-800: #2b3b2d;
+  --color-nextbay-003-900: #151e16;
+  --color-nextbay-003-950: #0f1510;
+
+  /* celadon */
+  --color-nextbay-004-50: #eafbea;
+  --color-nextbay-004-100: #d5f6d5;
+  --color-nextbay-004-200: #abeeaa;
+  --color-nextbay-004-300: #82e580;
+  --color-nextbay-004-400: #58dc56;
+  --color-nextbay-004-500: #2ed42b;
+  --color-nextbay-004-600: #25a923;
+  --color-nextbay-004-700: #1c7f1a;
+  --color-nextbay-004-800: #125511;
+  --color-nextbay-004-900: #092a09;
+  --color-nextbay-004-950: #061e06;
+
+  /* alice blue */
+  --color-nextbay-005-50: #eff5f6;
+  --color-nextbay-005-100: #deebed;
+  --color-nextbay-005-200: #bed7da;
+  --color-nextbay-005-300: #9dc4c8;
+  --color-nextbay-005-400: #7cb0b6;
+  --color-nextbay-005-500: #5c9ca3;
+  --color-nextbay-005-600: #497d83;
+  --color-nextbay-005-700: #375e62;
+  --color-nextbay-005-800: #253e41;
+  --color-nextbay-005-900: #121f21;
+  --color-nextbay-005-950: #0d1617;
+
+  /* orange tiger */
+  --color-nextbay-006-50: #fdf2e8;
+  --color-nextbay-006-100: #fae6d1;
+  --color-nextbay-006-200: #f5cca3;
+  --color-nextbay-006-300: #f0b375;
+  --color-nextbay-006-400: #ec9946;
+  --color-nextbay-006-500: #e78018;
+  --color-nextbay-006-600: #b96613;
+  --color-nextbay-006-700: #8a4c0f;
+  --color-nextbay-006-800: #5c330a;
+  --color-nextbay-006-900: #2e1a05;
+  --color-nextbay-006-950: #201203;
+}

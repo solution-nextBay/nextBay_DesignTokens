@@ -1,0 +1,14 @@
+{
+  "name": "nextbay-design-tokens",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shared design tokens (colors) for nextBay frontend repos (nextBay_App, nextBay_Site)",
+  "style": "palette.css",
+  "files": [
+    "palette.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mariecloe28/nextBay_DesignTokens.git"
+  }
+}
