@@ -12,11 +12,11 @@
   --border-2: rgba(255, 255, 255, 0.12);
   --text: #e8e8f0;
   --text-muted: #6b6b80;
-  --accent-1: #7c6fff;
-  --accent-2: #4ecdc4;
-  --accent-3: #ff6b6b;
-  --accent-4: #f9a825;
-  --accent-5: #4caf89;
+  --accent-1: #6e4e9e;
+  --accent-2: var(--color-nextbay-001-400);
+  --accent-3: #e14b3c;
+  --accent-4: var(--color-nextbay-006-400);
+  --accent-5: var(--color-nextbay-002-500);
 }
 
 *,
