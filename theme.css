@@ -1,0 +1,45 @@
+@import './palette.css';
+
+@theme {
+  --font-primary: 'Outfit', sans-serif;
+}
+
+:root {
+  --bg: var(--color-nextbay-bg);
+  --surface: #13131a;
+  --surface-2: #1a1a24;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-2: rgba(255, 255, 255, 0.12);
+  --text: #e8e8f0;
+  --text-muted: #6b6b80;
+  --accent-1: #7c6fff;
+  --accent-2: #4ecdc4;
+  --accent-3: #ff6b6b;
+  --accent-4: #f9a825;
+  --accent-5: #4caf89;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary), sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  min-height: 100vh;
+}
