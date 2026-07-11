@@ -5,7 +5,7 @@ Source unique du design system partagé entre `nextBay_App` et `nextBay_Site` (T
 ## Installation
 
 ```bash
-npm install github:mariecloe28/nextBay_DesignTokens#main
+npm install github:bestrider14/nextBay_DesignTokens#main
 ```
 
 ## Usage
