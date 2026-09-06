@@ -10,3 +10,16 @@
     --accent-1: #6e4e9e;
     --accent-3: #e14b3c;
 }
+
+{
+    --color-nextbay-bg: #f4f7f5;
+    --color-nextbay-001: #dfe9e3; /* surfaces / cartes */
+    --color-nextbay-002: #496657; /* vert foncé */
+    --color-nextbay-003: #6f9474; /* vert secondaire, légèrement renforcé */
+    --color-nextbay-004: #cce8c9; /* vert pâle plus doux */
+    --color-nextbay-005: #18312c; /* devient le texte / contraste foncé */
+    --color-nextbay-006: #c96d16; /* orange assombri pour fond clair */
+    --color-nextbay-input-bg: #ffffff; /* champs */
+    --accent-1: #684394; /* violet */
+    --accent-3: #c83e32; /* rouge */
+}
