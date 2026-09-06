@@ -16,6 +16,12 @@
   --accent-2: var(--color-nextbay-002-500);
   --accent-3: #e14b3c;
   --accent-4: var(--color-nextbay-006-400);
+
+  /* Tokens sémantiques d'état, utilisés pour les badges, alertes et messages de statut */
+  --color-success: var(--accent-2);
+  --color-warning: var(--accent-4);
+  --color-danger: var(--accent-3);
+  --color-info: var(--color-nextbay-001-500);
 }
 
 *,
