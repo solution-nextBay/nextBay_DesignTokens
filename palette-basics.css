@@ -1,3 +1,4 @@
+/*mode dark */
 {
     --color-nextbay-bg: #181b1c;
     --color-nextbay-001: #001a23; /* ink black */
@@ -11,6 +12,7 @@
     --accent-3: #e14b3c;
 }
 
+/*mode jour*/
 {
     --color-nextbay-bg: #f4f7f5;
     --color-nextbay-001: #dfe9e3; /* surfaces / cartes */

@@ -85,3 +85,31 @@
   --color-nextbay-006-900: #2e1a05;
   --color-nextbay-006-950: #201203;
 }
+
+/* Mode jour — valeurs choisies par Marie (voir palette-basics.css).
+   Deux sélecteurs : la media query suit le thème système tant qu'aucun choix
+   explicite n'est mémorisé ; [data-theme="light"] gagne dans les deux sens
+   une fois qu'un choix explicite est posé sur <html>. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    --color-nextbay-bg: #f4f7f5;
+    --color-nextbay-001: #dfe9e3;
+    --color-nextbay-002: #496657;
+    --color-nextbay-003: #6f9474;
+    --color-nextbay-004: #cce8c9;
+    --color-nextbay-005: #18312c;
+    --color-nextbay-006: #c96d16;
+    --color-nextbay-input-bg: #ffffff;
+  }
+}
+
+:root[data-theme='light'] {
+  --color-nextbay-bg: #f4f7f5;
+  --color-nextbay-001: #dfe9e3;
+  --color-nextbay-002: #496657;
+  --color-nextbay-003: #6f9474;
+  --color-nextbay-004: #cce8c9;
+  --color-nextbay-005: #18312c;
+  --color-nextbay-006: #c96d16;
+  --color-nextbay-input-bg: #ffffff;
+}

@@ -48,3 +48,23 @@ body {
 #app {
   min-height: 100vh;
 }
+
+/* Mode jour — voir palette.css pour le pattern à 2 sélecteurs.
+   Seuls les tokens couverts par la palette claire de Marie sont surchargés ici ;
+   --surface-2, --border, --border-2, --text-muted, --accent-2 et --accent-4 restent
+   ceux du mode sombre pour l'instant (à revoir une fois le rendu visible). */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    --surface: var(--color-nextbay-001);
+    --text: var(--color-nextbay-005);
+    --accent-1: #684394;
+    --accent-3: #c83e32;
+  }
+}
+
+:root[data-theme='light'] {
+  --surface: var(--color-nextbay-001);
+  --text: var(--color-nextbay-005);
+  --accent-1: #684394;
+  --accent-3: #c83e32;
+}
