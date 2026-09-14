@@ -8,6 +8,21 @@
   --color-nextbay-006: #e8892a; /* tiger orange */
   --color-nextbay-input-bg: #000b0eff;
 
+   /* Surfaces, bordures, état actif */
+   --color-nextbay-surface: #13131a;
+   --color-nextbay-surface-2: #1a1a24;
+   --color-nextbay-border: rgb(255 255 255 / 0.07);
+   --color-nextbay-border-2: rgb(255 255 255 / 0.12);
+   --color-nextbay-nav-active: #22332b;
+   --color-nextbay-text: #e8e8f0;
+   --color-nextbay-text-muted: #6b6b80;
+
+   /* Échelle de données — graphiques uniquement, jamais un état d'UI */
+   --color-nextbay-data-1: #b3efb2;
+   --color-nextbay-data-2: #7a9e7e;
+   --color-nextbay-data-3: #e8892a;
+   --color-nextbay-data-4: #9dc4c8;
+
   /* ink black */
   --color-nextbay-001-50: #e5f9ff;
   --color-nextbay-001-100: #ccf2ff;
@@ -92,7 +107,7 @@
    une fois qu'un choix explicite est posé sur <html>. */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme='dark']) {
-    --color-nextbay-bg: #f4f7f5;
+    --color-nextbay-bg: #eef1ef;
     --color-nextbay-001: #dfe9e3;
     --color-nextbay-002: #496657;
     --color-nextbay-003: #6f9474;
@@ -100,11 +115,24 @@
     --color-nextbay-005: #18312c;
     --color-nextbay-006: #c96d16;
     --color-nextbay-input-bg: #ffffff;
+
+    --color-nextbay-surface: #ffffff;
+    --color-nextbay-surface-2: #f1f5f2;
+    --color-nextbay-border: rgb(0 26 35 / 0.1);
+    --color-nextbay-border-2: rgb(0 26 35 / 0.22);
+    --color-nextbay-nav-active: #dceedb;
+    --color-nextbay-text: #18312c;
+    --color-nextbay-text-muted: #5c6b66;
+
+    --color-nextbay-data-1: #31493c;
+    --color-nextbay-data-2: #6f9474;
+    --color-nextbay-data-3: #c96d16;
+    --color-nextbay-data-4: #497d83;
   }
 }
 
 :root[data-theme='light'] {
-  --color-nextbay-bg: #f4f7f5;
+  --color-nextbay-bg: #eef1ef;
   --color-nextbay-001: #dfe9e3;
   --color-nextbay-002: #496657;
   --color-nextbay-003: #6f9474;
@@ -112,4 +140,17 @@
   --color-nextbay-005: #18312c;
   --color-nextbay-006: #c96d16;
   --color-nextbay-input-bg: #ffffff;
+
+  --color-nextbay-surface: #ffffff;
+  --color-nextbay-surface-2: #f1f5f2;
+  --color-nextbay-border: rgb(0 26 35 / 0.1);
+  --color-nextbay-border-2: rgb(0 26 35 / 0.22);
+  --color-nextbay-nav-active: #dceedb;
+  --color-nextbay-text: #18312c;
+  --color-nextbay-text-muted: #5c6b66;
+
+  --color-nextbay-data-1: #31493c;
+  --color-nextbay-data-2: #6f9474;
+  --color-nextbay-data-3: #c96d16;
+  --color-nextbay-data-4: #497d83;
 }

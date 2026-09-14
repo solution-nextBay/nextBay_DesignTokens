@@ -6,22 +6,28 @@
 
 :root {
   --bg: var(--color-nextbay-bg);
-  --surface: #13131a;
-  --surface-2: #1a1a24;
-  --border: rgb(255 255 255 / 0.07);
-  --border-2: rgba(255, 255, 255, 0.12);
-  --text: #e8e8f0;
-  --text-muted: #6b6b80;
+  --surface: var(--color-nextbay-surface);
+  --surface-2: var(--color-nextbay-surface-2);
+  --border: var(--color-nextbay-border);
+  --border-2: var(--color-nextbay-border-2);
+  --nav-active-bg: var(--color-nextbay-nav-active);
+  --text: var(--color-nextbay-text);
+  --text-muted: var(--color-nextbay-text-muted);
   --accent-1: #6e4e9e;
   --accent-2: var(--color-nextbay-002-500);
   --accent-3: #e14b3c;
   --accent-4: var(--color-nextbay-006-400);
 
+  --data-1: var(--color-nextbay-data-1);
+  --data-2: var(--color-nextbay-data-2);
+  --data-3: var(--color-nextbay-data-3);
+  --data-4: var(--color-nextbay-data-4);
+
   /* Tokens sémantiques d'état, utilisés pour les badges, alertes et messages de statut */
   --color-success: var(--accent-2);
   --color-warning: var(--accent-4);
   --color-danger: var(--accent-3);
-  --color-info: var(--color-nextbay-001-500);
+  --color-info: var(--color-nextbay-data-4);
 }
 
 *,
@@ -49,38 +55,23 @@ body {
   min-height: 100vh;
 }
 
-/* Mode jour — voir palette.css pour le pattern à 2 sélecteurs.
-   --surface-2/--border/--border-2/--text-muted/--accent-2/--accent-4 comblés ici (2026-09-12) :
-   --accent-2/--accent-4 réutilisent les teintes "002"/"006" déjà choisies par Marie pour le
-   mode jour (palette-basics.css) plutôt que d'inventer une nouvelle nuance ; --border/--border-2
-   passent en noir translucide (symétrique du blanc translucide du mode sombre, plus sombre que
-   clair sur fond pâle) ; --text-muted est un gris-vert intermédiaire entre --text et --surface
-   du mode jour ; --surface-2 une variante légèrement plus soutenue que --surface pour distinguer
-   les panneaux surélevés. */
+/* Mode jour — surface/border/nav-active/text/text-muted/data-* viennent maintenant de
+   palette.css (référencés via :root ci-dessus) et n'ont plus besoin d'override ici.
+   Seuls les accents restent propres à theme.css (pas de home dans palette.css) :
+   --accent-3/--accent-4 assombris (#c83e32→#b8372c, #c96d16→#a35a0f) pour tenir 4,5:1
+   en texte sur le fond clair. */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme='dark']) {
-    --surface: var(--color-nextbay-001);
-    --surface-2: #d2e2d9;
-    --border: rgba(0, 0, 0, 0.16);
-    --border-2: rgba(0, 0, 0, 0.1);
-    --text: var(--color-nextbay-005);
-    --text-muted: #5c6b66;
     --accent-1: #684394;
     --accent-2: #496657;
-    --accent-3: #c83e32;
-    --accent-4: #c96d16;
+    --accent-3: #b8372c;
+    --accent-4: #a35a0f;
   }
 }
 
 :root[data-theme='light'] {
-  --surface: var(--color-nextbay-001);
-  --surface-2: #d2e2d9;
-  --border: rgba(0, 0, 0, 0.16);
-  --border-2: rgba(0, 0, 0, 0.1);
-  --text: var(--color-nextbay-005);
-  --text-muted: #5c6b66;
   --accent-1: #684394;
   --accent-2: #496657;
-  --accent-3: #c83e32;
-  --accent-4: #c96d16;
+  --accent-3: #b8372c;
+  --accent-4: #a35a0f;
 }
