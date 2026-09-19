@@ -55,6 +55,23 @@ body {
   min-height: 100vh;
 }
 
+/* `data-theme` (posé sur <html> par useTheme.ts côté nextBay_App) ne suffit pas à lui seul à
+   faire suivre le thème choisi par l'app aux éléments natifs du navigateur (scrollbars,
+   <select>, etc.) — sans `color-scheme`, ils suivent le thème système/navigateur, pas celui de
+   l'app (repéré 2026-09-18 sur la scrollbar d'une liste kanban restée sombre en plein mode
+   clair, nextBay_App). `light dark` = laisse le navigateur respecter la préférence système tant
+   qu'aucun choix explicite n'est fait, cohérent avec le fallback `prefers-color-scheme`
+   utilisé juste en dessous pour les accents. */
+:root {
+  color-scheme: light dark;
+}
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
 /* Mode jour — surface/border/nav-active/text/text-muted/data-* viennent maintenant de
    palette.css (référencés via :root ci-dessus) et n'ont plus besoin d'override ici.
    Seuls les accents restent propres à theme.css (pas de home dans palette.css) :
