@@ -8,9 +8,14 @@
   --color-nextbay-006: #e8892a; /* tiger orange */
   --color-nextbay-input-bg: #000b0eff;
 
-   /* Surfaces, bordures, état actif */
-   --color-nextbay-surface: #13131a;
-   --color-nextbay-surface-2: #1a1a24;
+   /* Surfaces, bordures, état actif — mode sombre : --surface doit être plus clair que --bg
+      (élévation), pas plus sombre. Avant ce fix, --surface (#13131a) était PLUS SOMBRE que
+      --bg (#181b1c) et --surface-2 (#1a1a24) quasi indiscernable de --bg en luminance perçue
+      mais avec un canal bleu plus fort — d'où les "cartes invisibles" / "boîtes bleu foncé"
+      signalées par Luka sur des pages par ailleurs correctement codées (var(--surface) partout).
+      Nouvelles valeurs : même famille neutre-froide que --bg, mais réellement élevées. */
+   --color-nextbay-surface: #202425;
+   --color-nextbay-surface-2: #272c2e;
    --color-nextbay-border: rgb(255 255 255 / 0.07);
    --color-nextbay-border-2: rgb(255 255 255 / 0.12);
    --color-nextbay-nav-active: #22332b;
