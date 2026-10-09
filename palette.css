@@ -106,3 +106,32 @@
   --color-nextbay-006-900: #2e1a05;
   --color-nextbay-006-950: #201203;
 }
+
+/* Repli pour navigateurs sans light-dark() (avant Chrome/Edge 123, Firefox 120, Safari 17.5) :
+   sans ce bloc, toutes les couleurs ci-dessus y seraient invalides (page sans fond ni couleurs).
+   Ils reçoivent le mode NUIT en dur, quel que soit le thème choisi. Les navigateurs récents
+   ignorent ce bloc. Valeurs = 2e argument (nuit) de chaque light-dark() du bloc @theme : toute
+   modification d'une valeur nuit là-haut doit être reportée ici. */
+@supports not (color: light-dark(#000, #fff)) {
+  :root {
+    --color-nextbay-bg: #181b1c;
+    --color-nextbay-001: #001a23;
+    --color-nextbay-002: #31493c;
+    --color-nextbay-003: #7a9e7e;
+    --color-nextbay-004: #b3efb2;
+    --color-nextbay-005: #e8f1f2;
+    --color-nextbay-006: #e8892a;
+    --color-nextbay-input-bg: #000b0eff;
+    --color-nextbay-surface: #202425;
+    --color-nextbay-surface-2: #272c2e;
+    --color-nextbay-border: rgb(255 255 255 / 0.07);
+    --color-nextbay-border-2: rgb(255 255 255 / 0.12);
+    --color-nextbay-nav-active: #22332b;
+    --color-nextbay-text: #e8e8f0;
+    --color-nextbay-text-muted: #6b6b80;
+    --color-nextbay-data-1: #b3efb2;
+    --color-nextbay-data-2: #7a9e7e;
+    --color-nextbay-data-3: #e8892a;
+    --color-nextbay-data-4: #9dc4c8;
+  }
+}
