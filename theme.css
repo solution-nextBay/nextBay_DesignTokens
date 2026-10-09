@@ -13,10 +13,11 @@
   --nav-active-bg: var(--color-nextbay-nav-active);
   --text: var(--color-nextbay-text);
   --text-muted: var(--color-nextbay-text-muted);
-  --accent-1: #6e4e9e;
-  --accent-2: var(--color-nextbay-002-500);
-  --accent-3: #e14b3c;
-  --accent-4: var(--color-nextbay-006-400);
+  /* light-dark(<jour>, <nuit>) — accents 3/4 assombris le jour pour tenir 4,5:1 en texte sur fond clair. */
+  --accent-1: light-dark(#684394, #6e4e9e);
+  --accent-2: light-dark(#496657, var(--color-nextbay-002-500));
+  --accent-3: light-dark(#b8372c, #e14b3c);
+  --accent-4: light-dark(#a35a0f, var(--color-nextbay-006-400));
 
   --data-1: var(--color-nextbay-data-1);
   --data-2: var(--color-nextbay-data-2);
@@ -55,13 +56,12 @@ body {
   min-height: 100vh;
 }
 
-/* `data-theme` (posé sur <html> par useTheme.ts côté nextBay_App) ne suffit pas à lui seul à
-   faire suivre le thème choisi par l'app aux éléments natifs du navigateur (scrollbars,
-   <select>, etc.) — sans `color-scheme`, ils suivent le thème système/navigateur, pas celui de
-   l'app (repéré 2026-09-18 sur la scrollbar d'une liste kanban restée sombre en plein mode
-   clair, nextBay_App). `light dark` = laisse le navigateur respecter la préférence système tant
-   qu'aucun choix explicite n'est fait, cohérent avec le fallback `prefers-color-scheme`
-   utilisé juste en dessous pour les accents. */
+/* `color-scheme` pilote TOUTES les couleurs : chaque token est un light-dark() (palette.css +
+   accents ci-dessus) qui se résout selon ce `color-scheme`. Sans choix explicite (`light dark`),
+   le navigateur suit la préférence système ; `data-theme` (posé sur <html> par useTheme.ts dans
+   nextBay_App et nextBay_Site) force l'un ou l'autre. Sert aussi aux éléments natifs (scrollbars,
+   <select>...). Ne jamais poser un `color-scheme` local sur un composant sans vouloir changer
+   ses couleurs de thème. */
 :root {
   color-scheme: light dark;
 }
@@ -70,25 +70,4 @@ body {
 }
 :root[data-theme='dark'] {
   color-scheme: dark;
-}
-
-/* Mode jour — surface/border/nav-active/text/text-muted/data-* viennent maintenant de
-   palette.css (référencés via :root ci-dessus) et n'ont plus besoin d'override ici.
-   Seuls les accents restent propres à theme.css (pas de home dans palette.css) :
-   --accent-3/--accent-4 assombris (#c83e32→#b8372c, #c96d16→#a35a0f) pour tenir 4,5:1
-   en texte sur le fond clair. */
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme='dark']) {
-    --accent-1: #684394;
-    --accent-2: #496657;
-    --accent-3: #b8372c;
-    --accent-4: #a35a0f;
-  }
-}
-
-:root[data-theme='light'] {
-  --accent-1: #684394;
-  --accent-2: #496657;
-  --accent-3: #b8372c;
-  --accent-4: #a35a0f;
 }

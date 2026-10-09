@@ -1,32 +1,33 @@
- @theme {
-  --color-nextbay-bg: #181b1c;
-  --color-nextbay-001: #001a23; /* ink black */
-  --color-nextbay-002: #31493c; /* pine teal */
-  --color-nextbay-003: #7a9e7e; /* muted teal */
-  --color-nextbay-004: #b3efb2; /* celadon */
-  --color-nextbay-005: #e8f1f2; /* alice blue */
-  --color-nextbay-006: #e8892a; /* tiger orange */
-  --color-nextbay-input-bg: #000b0eff;
+/* Une seule source par token : light-dark(<mode jour>, <mode nuit>). Le navigateur choisit selon
+   le `color-scheme` posé dans theme.css (data-theme explicite, sinon préférence système) — plus
+   de blocs jour dupliqués qui peuvent diverger. Ordre des arguments : JOUR d'abord, NUIT ensuite.
+   Support natif requis (Chrome/Edge 123+, Firefox 120+, Safari 17.5+) : Tailwind 4 exclut
+   volontairement light-dark() de ses transformations LightningCSS, aucun polyfill au build. */
+@theme {
+  --color-nextbay-bg: light-dark(#eef1ef, #181b1c);
+  --color-nextbay-001: light-dark(#dfe9e3, #001a23); /* ink black — devient une surface pâle le jour */
+  --color-nextbay-002: light-dark(#496657, #31493c); /* pine teal */
+  --color-nextbay-003: light-dark(#6f9474, #7a9e7e); /* muted teal */
+  --color-nextbay-004: light-dark(#1c7f1a, #b3efb2); /* celadon — vert foncé le jour */
+  --color-nextbay-005: light-dark(#18312c, #e8f1f2); /* alice blue — devient le texte foncé le jour */
+  --color-nextbay-006: light-dark(#c96d16, #e8892a); /* tiger orange */
+  --color-nextbay-input-bg: light-dark(#ffffff, #000b0eff);
 
-   /* Surfaces, bordures, état actif — mode sombre : --surface doit être plus clair que --bg
-      (élévation), pas plus sombre. Avant ce fix, --surface (#13131a) était PLUS SOMBRE que
-      --bg (#181b1c) et --surface-2 (#1a1a24) quasi indiscernable de --bg en luminance perçue
-      mais avec un canal bleu plus fort — d'où les "cartes invisibles" / "boîtes bleu foncé"
-      signalées par Luka sur des pages par ailleurs correctement codées (var(--surface) partout).
-      Nouvelles valeurs : même famille neutre-froide que --bg, mais réellement élevées. */
-   --color-nextbay-surface: #202425;
-   --color-nextbay-surface-2: #272c2e;
-   --color-nextbay-border: rgb(255 255 255 / 0.07);
-   --color-nextbay-border-2: rgb(255 255 255 / 0.12);
-   --color-nextbay-nav-active: #22332b;
-   --color-nextbay-text: #e8e8f0;
-   --color-nextbay-text-muted: #6b6b80;
+  /* Surfaces : en mode nuit --surface doit rester plus clair que --bg (élévation), sinon les
+     cartes deviennent invisibles (fix du 2026-10-05). */
+  --color-nextbay-surface: light-dark(#ffffff, #202425);
+  --color-nextbay-surface-2: light-dark(#f1f5f2, #272c2e);
+  --color-nextbay-border: light-dark(rgb(0 26 35 / 0.1), rgb(255 255 255 / 0.07));
+  --color-nextbay-border-2: light-dark(rgb(0 26 35 / 0.22), rgb(255 255 255 / 0.12));
+  --color-nextbay-nav-active: light-dark(#dceedb, #22332b);
+  --color-nextbay-text: light-dark(#18312c, #e8e8f0);
+  --color-nextbay-text-muted: light-dark(#5c6b66, #6b6b80);
 
-   /* Échelle de données — graphiques uniquement, jamais un état d'UI */
-   --color-nextbay-data-1: #b3efb2;
-   --color-nextbay-data-2: #7a9e7e;
-   --color-nextbay-data-3: #e8892a;
-   --color-nextbay-data-4: #9dc4c8;
+  /* Échelle de données — graphiques uniquement, jamais un état d'UI */
+  --color-nextbay-data-1: light-dark(#31493c, #b3efb2);
+  --color-nextbay-data-2: light-dark(#6f9474, #7a9e7e);
+  --color-nextbay-data-3: light-dark(#c96d16, #e8892a);
+  --color-nextbay-data-4: light-dark(#497d83, #9dc4c8);
 
   /* ink black */
   --color-nextbay-001-50: #e5f9ff;
@@ -104,58 +105,4 @@
   --color-nextbay-006-800: #5c330a;
   --color-nextbay-006-900: #2e1a05;
   --color-nextbay-006-950: #201203;
-}
-
-/* Mode jour — valeurs choisies par Marie (voir palette-basics.css).
-   Deux sélecteurs : la media query suit le thème système tant qu'aucun choix
-   explicite n'est mémorisé ; [data-theme="light"] gagne dans les deux sens
-   une fois qu'un choix explicite est posé sur <html>. */
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme='dark']) {
-    --color-nextbay-bg: #eef1ef;
-    --color-nextbay-001: #dfe9e3;
-    --color-nextbay-002: #496657;
-    --color-nextbay-003: #6f9474;
-    --color-nextbay-004: #1c7f1a;
-    --color-nextbay-005: #18312c;
-    --color-nextbay-006: #c96d16;
-    --color-nextbay-input-bg: #ffffff;
-
-    --color-nextbay-surface: #ffffff;
-    --color-nextbay-surface-2: #f1f5f2;
-    --color-nextbay-border: rgb(0 26 35 / 0.1);
-    --color-nextbay-border-2: rgb(0 26 35 / 0.22);
-    --color-nextbay-nav-active: #dceedb;
-    --color-nextbay-text: #18312c;
-    --color-nextbay-text-muted: #5c6b66;
-
-    --color-nextbay-data-1: #31493c;
-    --color-nextbay-data-2: #6f9474;
-    --color-nextbay-data-3: #c96d16;
-    --color-nextbay-data-4: #497d83;
-  }
-}
-
-:root[data-theme='light'] {
-  --color-nextbay-bg: #eef1ef;
-  --color-nextbay-001: #dfe9e3;
-  --color-nextbay-002: #496657;
-  --color-nextbay-003: #6f9474;
-  --color-nextbay-004: #1c7f1a;
-  --color-nextbay-005: #18312c;
-  --color-nextbay-006: #c96d16;
-  --color-nextbay-input-bg: #ffffff;
-
-  --color-nextbay-surface: #ffffff;
-  --color-nextbay-surface-2: #f1f5f2;
-  --color-nextbay-border: rgb(0 26 35 / 0.1);
-  --color-nextbay-border-2: rgb(0 26 35 / 0.22);
-  --color-nextbay-nav-active: #dceedb;
-  --color-nextbay-text: #18312c;
-  --color-nextbay-text-muted: #5c6b66;
-
-  --color-nextbay-data-1: #31493c;
-  --color-nextbay-data-2: #6f9474;
-  --color-nextbay-data-3: #c96d16;
-  --color-nextbay-data-4: #497d83;
 }
