@@ -20,8 +20,10 @@
   --color-nextbay-border: light-dark(rgb(0 26 35 / 0.1), rgb(255 255 255 / 0.07));
   --color-nextbay-border-2: light-dark(rgb(0 26 35 / 0.22), rgb(255 255 255 / 0.12));
   --color-nextbay-nav-active: light-dark(#dceedb, #22332b);
-  --color-nextbay-text: light-dark(#18312c, #e8e8f0);
-  --color-nextbay-text-muted: light-dark(#5c6b66, #6b6b80);
+  /* Texte nuit vert-gris (même famille que les fonds) ; --text-muted tient ~5:1 sur --surface
+     (#202425). L'ancien #6b6b80 lavande ne faisait que ~3:1 (décision du 2026-10-15). */
+  --color-nextbay-text: light-dark(#18312c, #e6ebe8);
+  --color-nextbay-text-muted: light-dark(#5c6b66, #8a9690);
 
   /* Échelle de données — graphiques uniquement, jamais un état d'UI */
   --color-nextbay-data-1: light-dark(#31493c, #b3efb2);
@@ -127,8 +129,8 @@
     --color-nextbay-border: rgb(255 255 255 / 0.07);
     --color-nextbay-border-2: rgb(255 255 255 / 0.12);
     --color-nextbay-nav-active: #22332b;
-    --color-nextbay-text: #e8e8f0;
-    --color-nextbay-text-muted: #6b6b80;
+    --color-nextbay-text: #e6ebe8;
+    --color-nextbay-text-muted: #8a9690;
     --color-nextbay-data-1: #b3efb2;
     --color-nextbay-data-2: #7a9e7e;
     --color-nextbay-data-3: #e8892a;
