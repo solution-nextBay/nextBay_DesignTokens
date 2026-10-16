@@ -8,13 +8,19 @@
   --bg: var(--color-nextbay-bg);
   --surface: var(--color-nextbay-surface);
   --surface-2: var(--color-nextbay-surface-2);
+  --input-bg: var(--color-nextbay-input-bg); /* fond des champs de formulaire uniquement */
   --border: var(--color-nextbay-border);
   --border-2: var(--color-nextbay-border-2);
   --nav-active-bg: var(--color-nextbay-nav-active);
   --text: var(--color-nextbay-text);
   --text-muted: var(--color-nextbay-text-muted);
-  /* light-dark(<jour>, <nuit>) — accents 3/4 assombris le jour pour tenir 4,5:1 en texte sur fond clair. */
-  --accent-1: light-dark(#684394, #6e4e9e);
+  /* light-dark(<jour>, <nuit>) — accents 3/4 assombris le jour pour tenir 4,5:1 en texte sur fond clair.
+     Rôles (décision du 2026-10-15, voir README « Règles ») :
+     --accent-1 sarcelle = liens, libellés, puces, focus — remplace l'ancien violet (hors marque) ;
+     --accent-2 sauge    = seul vert de l'interface (parcours client, succès) ;
+     --accent-3 rouge    = danger / erreur ;
+     --accent-4 orange   = actions uniquement (bouton principal, CTA). */
+  --accent-1: light-dark(var(--color-nextbay-005-600), var(--color-nextbay-005-300));
   --accent-2: light-dark(#496657, var(--color-nextbay-002-500));
   --accent-3: light-dark(#b8372c, #e14b3c);
   --accent-4: light-dark(#a35a0f, var(--color-nextbay-006-400));
@@ -29,6 +35,67 @@
   --color-warning: var(--accent-4);
   --color-danger: var(--accent-3);
   --color-info: var(--color-nextbay-data-4);
+
+  /* Anneau de focus clavier, même recette partout (champs, boutons, cartes sélectionnables). */
+  --focus-ring: 0 0 0 3px color-mix(in srgb, var(--accent-1) 35%, transparent);
+
+  /* ── Échelles (décisions du 2026-10-15) ─────────────────────────────────────────────────────
+     Variables à nous, PAS dans @theme : les namespaces Tailwind (--spacing, --radius-*, --text-*)
+     changeraient les utilitaires par défaut. Aucune valeur brute en px ne doit apparaître dans
+     les composants pour ces propriétés : toujours une de ces variables. */
+
+  /* Polices : Outfit pour tout le texte, Syne seulement pour le logo et le titre des écrans
+     d'authentification. */
+  --font-logo: 'Syne', sans-serif;
+
+  /* Espacements — grille de 4 px, plus deux demi-pas (2 et 6 px) pour l'UI dense de l'App. */
+  --space-0-5: 2px;
+  --space-1: 4px;
+  --space-1-5: 6px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+
+  /* Arrondis. Cercle parfait : border-radius: 50% (pas un token, c'est une forme). */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 999px;
+
+  /* Tailles de texte. Pas de demi-pixels : 12.5 → 13, 13.5 → 14, 11.5 → 12. */
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 13px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 22px; /* titre de page (PageHeader) */
+  --font-size-3xl: 28px;
+  --font-size-4xl: 36px;
+  --font-size-5xl: 44px; /* hero du Site */
+
+  /* Graisses. 800 est réservé au logo (Syne). */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Largeurs de contenu. */
+  --container: 1200px; /* sections pleine largeur du Site */
+  --content-narrow: 720px; /* texte long (légal, à propos) */
+  --content-form: 560px; /* formulaires dans une page pleine largeur */
+
+  /* Ombres. */
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.08);
+  --shadow-md: 0 4px 16px rgb(0 0 0 / 0.15);
+  --shadow-lg: 0 8px 24px rgb(0 0 0 / 0.25);
 }
 
 *,
@@ -78,7 +145,7 @@ body {
   :root,
   :root[data-theme='light'] {
     color-scheme: dark;
-    --accent-1: #6e4e9e;
+    --accent-1: var(--color-nextbay-005-300);
     --accent-2: var(--color-nextbay-002-500);
     --accent-3: #e14b3c;
     --accent-4: var(--color-nextbay-006-400);
