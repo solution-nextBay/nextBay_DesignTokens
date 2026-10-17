@@ -14,6 +14,10 @@
   --nav-active-bg: var(--color-nextbay-nav-active);
   --text: var(--color-nextbay-text);
   --text-muted: var(--color-nextbay-text-muted);
+  --text-on-accent: var(--color-nextbay-on-accent); /* texte sur --accent-2/3/4 en fond plein */
+  /* Orange de marque du logo (« Bay »), identique au SVG. Distinct de --accent-4, assombri le jour
+     pour tenir 4,5:1 en texte : le logo est une exception de marque, pas une action. */
+  --logo-accent: var(--color-nextbay-006);
   /* light-dark(<jour>, <nuit>) — accents 3/4 assombris le jour pour tenir 4,5:1 en texte sur fond clair.
      Rôles (décision du 2026-10-15, voir README « Règles ») :
      --accent-1 sarcelle = liens, libellés, puces, focus — remplace l'ancien violet (hors marque) ;

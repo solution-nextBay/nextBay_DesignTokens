@@ -20,6 +20,9 @@
   --color-nextbay-border: light-dark(rgb(0 26 35 / 0.1), rgb(255 255 255 / 0.07));
   --color-nextbay-border-2: light-dark(rgb(0 26 35 / 0.22), rgb(255 255 255 / 0.12));
   --color-nextbay-nav-active: light-dark(#dceedb, #22332b);
+  /* Texte posé sur un fond d'accent plein (bouton principal, bouton client) : blanc dans les deux
+     modes, pas de light-dark() (donc rien à reporter dans le repli @supports). */
+  --color-nextbay-on-accent: #ffffff;
   /* Texte nuit vert-gris (même famille que les fonds) ; --text-muted tient ~5:1 sur --surface
      (#202425). L'ancien #6b6b80 lavande ne faisait que ~3:1 (décision du 2026-10-15). */
   --color-nextbay-text: light-dark(#18312c, #e6ebe8);
