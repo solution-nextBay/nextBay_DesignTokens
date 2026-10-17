@@ -44,6 +44,7 @@ Stylelint (voir plus bas) en vérifie automatiquement la plupart.
 
   Le céladon de la palette reste réservé au logo, aux illustrations et aux graphiques (`--data-*`).
   États : `--color-success`, `--color-warning`, `--color-danger`, `--color-info`.
+  Texte sur un fond d'accent plein (bouton) : `--text-on-accent`. Orange du logo : `--logo-accent` (logo uniquement).
 
 - **Fond d'une boîte = son niveau d'imbrication**, pas une préférence :
 
