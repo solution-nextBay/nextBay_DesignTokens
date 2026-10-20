@@ -20,11 +20,12 @@
   --logo-accent: var(--color-nextbay-006);
   /* light-dark(<jour>, <nuit>) — accents 3/4 assombris le jour pour tenir 4,5:1 en texte sur fond clair.
      Rôles (décision du 2026-10-15, voir README « Règles ») :
-     --accent-1 sarcelle = liens, libellés, puces, focus — remplace l'ancien violet (hors marque) ;
-     --accent-2 sauge    = seul vert de l'interface (parcours client, succès) ;
+     --accent-1 céladon  = liens, libellés, puces, focus — vert foncé le jour, céladon la nuit
+                           (sarcelle essayée du 2026-10-15 au 2026-10-20, abandonnée) ;
+     --accent-2 sauge    = parcours client, succès ;
      --accent-3 rouge    = danger / erreur ;
      --accent-4 orange   = actions uniquement (bouton principal, CTA). */
-  --accent-1: light-dark(var(--color-nextbay-005-600), var(--color-nextbay-005-300));
+  --accent-1: var(--color-nextbay-004);
   --accent-2: light-dark(#496657, var(--color-nextbay-002-500));
   --accent-3: light-dark(#b8372c, #e14b3c);
   --accent-4: light-dark(#a35a0f, var(--color-nextbay-006-400));
@@ -149,7 +150,7 @@ body {
   :root,
   :root[data-theme='light'] {
     color-scheme: dark;
-    --accent-1: var(--color-nextbay-005-300);
+    --accent-1: var(--color-nextbay-004);
     --accent-2: var(--color-nextbay-002-500);
     --accent-3: #e14b3c;
     --accent-4: var(--color-nextbay-006-400);

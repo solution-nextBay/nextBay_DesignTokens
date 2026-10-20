@@ -38,11 +38,11 @@ Stylelint (voir plus bas) en vérifie automatiquement la plupart.
   | Token        | Couleur  | Sert à                                                    |
   | ------------ | -------- | --------------------------------------------------------- |
   | `--accent-4` | orange   | **Actions uniquement** : bouton principal, CTA            |
-  | `--accent-1` | sarcelle | Liens, libellés, puces, onglet actif, focus               |
-  | `--accent-2` | sauge    | Seul vert de l'interface : parcours client, succès        |
+  | `--accent-1` | céladon  | Liens, libellés, puces, onglet actif, focus               |
+  | `--accent-2` | sauge    | Parcours client, succès                                   |
   | `--accent-3` | rouge    | Danger, erreur                                            |
 
-  Le céladon de la palette reste réservé au logo, aux illustrations et aux graphiques (`--data-*`).
+  `--accent-1` = `--color-nextbay-004` : vert foncé le jour (`#1c7f1a`), céladon la nuit (`#b3efb2`).
   États : `--color-success`, `--color-warning`, `--color-danger`, `--color-info`.
   Texte sur un fond d'accent plein (bouton) : `--text-on-accent`. Orange du logo : `--logo-accent` (logo uniquement).
 
